@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghery <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 00:50:26 by ghery             #+#    #+#             */
-/*   Updated: 2016/02/23 16:49:04 by ghery            ###   ########.fr       */
+/*   Created: 2016/01/29 16:20:31 by ghery             #+#    #+#             */
+/*   Updated: 2016/02/22 15:28:54 by ghery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	int		i;
-	int		j;
-	char	*join;
+# include "libft/libft.h"
+# include <stdio.h>
 
-	i = -1;
-	j = 0;
-	join = NULL;
-	if (s1 != NULL && s2 != NULL)
-	{
-		join = (char *)ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-		if (join != NULL)
-		{
-			while (s1[++i])
-				join[i] = s1[i];
-			while (s2[j])
-			{
-				join[i + j] = s2[j];
-				j++;
-			}
-		}
-	}
-	return (join);
-}
+# define BUFF_SIZE 1	
+
+int		get_next_line(int const fd, char **line);
+
+#endif

@@ -6,7 +6,7 @@
 #    By: ghery <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/03 23:44:36 by ghery             #+#    #+#              #
-#    Updated: 2016/02/15 11:16:30 by ghery            ###   ########.fr        #
+#    Updated: 2016/02/22 15:36:28 by ghery            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,4 +39,5 @@ clean	:
 fclean	:	clean
 			$(RM) $(NAME)
 
-re		:	fclean all
+re		:	
+	make fclean && make all
